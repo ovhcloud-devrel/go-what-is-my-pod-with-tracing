@@ -34,5 +34,7 @@ what-is-my-pod-with-tracing-deployment-7b85865ff-wlrvz what-is-my-pod-with-traci
 ## Test
 
 ```
-curl http://<LB_IP>/
+$ export APP_URL=$(kubectl get svc what-is-my-pod-with-tracing -o jsonpath='{.status.loadBalancer.ingress[].ip}')
+$ echo $APP_URL
+$ curl http://$APP_URL:8080/
 ```
