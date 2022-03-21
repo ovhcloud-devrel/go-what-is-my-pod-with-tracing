@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: what-is-my-pod-with-tracing-deployment
+  labels:
+    app: what-is-my-pod-with-tracing
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: what-is-my-pod-with-tracing
+  template:
+    metadata:
+      labels:
+        app: what-is-my-pod-with-tracing
+    spec:
+      containers:
+      - name: what-is-my-pod-with-tracing
+        image: scraly/what-is-my-pod-with-tracing:1.0.2
+        ports:
+        - containerPort: 8080
+        env:
+          - name: MY_POD_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name

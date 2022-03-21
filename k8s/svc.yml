@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: what-is-my-pod-with-tracing
+  name: what-is-my-pod-with-tracing
+spec:
+  ports:
+  - port: 8080
+  selector:
+    app: what-is-my-pod-with-tracing
+  type: LoadBalancer
