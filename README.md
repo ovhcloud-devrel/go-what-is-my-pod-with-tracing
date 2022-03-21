@@ -12,9 +12,9 @@ go run main.go
 ## Docker
 
 ```
-docker build -t scraly/what-is-my-pod-with-tracing:1.0.2 .
-docker run -it -p 8080:8080 scraly/what-is-my-pod-with-tracing:1.0.2
-docker push scraly/what-is-my-pod-with-tracing:1.0.2
+docker build -t <user>/what-is-my-pod-with-tracing:1.0.2 .
+docker run -it -p 8080:8080 <user>/what-is-my-pod-with-tracing:1.0.2
+docker push <user>/what-is-my-pod-with-tracing:1.0.2
 ```
 
 ## Kubernetes
